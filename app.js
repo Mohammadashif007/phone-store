@@ -40,10 +40,22 @@ const displayPhoneData = (data) => {
         `;
         phoneContainer.appendChild(div);
     });
+    handleLoadingSpinner(false)
 };
 
 const handleSearchPhone = () => {
     const inputField = document.getElementById("input-field");
     const inputFieldValue = inputField.value;
     loadPhoneData(inputFieldValue);
+    handleLoadingSpinner(true);
 };
+
+const handleLoadingSpinner = (isLoading) => {
+    const loadingSpinner = document.getElementById('loading-spinner');
+    if(isLoading){
+        loadingSpinner.classList.remove('hidden');
+    }
+    else{
+        loadingSpinner.classList.add('hidden');
+    }
+}
