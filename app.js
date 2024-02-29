@@ -10,6 +10,15 @@ const displayPhoneData = (data) => {
     const phoneContainer = document.getElementById("phone-container");
     phoneContainer.innerHTML = "";
 
+    const btnShowAll = document.getElementById('btnShowAll');
+
+    if(data.length > 9) {
+        btnShowAll.classList.remove('hidden');
+    }
+    else {
+        btnShowAll.classList.add('hidden');
+    }
+
     data = data.slice(0, 9)
 
     data.forEach((element) => {
