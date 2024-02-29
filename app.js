@@ -9,6 +9,9 @@ const loadPhoneData = async (searchText) => {
 const displayPhoneData = (data) => {
     const phoneContainer = document.getElementById("phone-container");
     phoneContainer.innerHTML = "";
+
+    data = data.slice(0, 9)
+
     data.forEach((element) => {
         const div = document.createElement("div");
         div.classList = `card bg-base-100 shadow-xl`;
